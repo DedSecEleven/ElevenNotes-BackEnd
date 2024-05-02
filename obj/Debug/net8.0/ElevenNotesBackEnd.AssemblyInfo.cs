@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElevenNotesBackEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+863e65e42b6394d51b7dbcf4b295a7a86a50dfcc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc427e1c26a246eca4f86f29978325859fef6be4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ElevenNotesBackEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ElevenNotesBackEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
