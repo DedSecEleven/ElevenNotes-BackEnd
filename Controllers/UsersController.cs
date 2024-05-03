@@ -9,6 +9,24 @@ namespace ElevenNotesBackEnd.Controllers{
     public UsersController(ElevenContext context){
       _Context=context;
     }
-    
+
+    // Listar Usuarios
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<User>>> GetUser()
+    {
+      return await _Context.Users.ToListAsync();
+    }
+
+    // Detalles de un usuario
+    [HttpGet("{id}")]
+    public async Task<ActionResult<User>> GetUser(int id)
+    {
+      var user = await _Context.Users.FindAsync(id);
+      if (user == null)
+      {
+        return NotFound();
+      }
+      return user;
+    }
   }
 }
