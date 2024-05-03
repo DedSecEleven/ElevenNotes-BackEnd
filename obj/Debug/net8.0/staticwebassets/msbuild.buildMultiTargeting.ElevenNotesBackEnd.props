@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\ElevenNotesBackEnd.props" />
+  <Import Project="../build/ElevenNotesBackEnd.props" />
 </Project>
