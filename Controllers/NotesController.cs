@@ -15,10 +15,22 @@ namespace ElevenNotesBackEnd.Controllers
       _Context = context;
     }
 
+    // Listar Notas
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Note>>> GetNotes()
     {
       return await _Context.Notes.ToListAsync();
+    }
+    // Detalles de una nota
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Note>> GetNote(int id)
+    {
+      var note = await _Context.Notes.FindAsync(id);
+      if (note == null)
+      {
+        return NotFound();
+      }
+      return note;
     }
   }
 }
