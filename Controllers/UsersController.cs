@@ -3,13 +3,16 @@ using ElevenNotesBackEnd.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace ElevenNotesBackEnd.Controllers{
+namespace ElevenNotesBackEnd.Controllers
+{
   [Route("api/[Controller]")]
   [ApiController]
-  public class UsersController:Controller{
+  public class UsersController : Controller
+  {
     private readonly ElevenContext _Context;
-    public UsersController(ElevenContext context){
-      _Context=context;
+    public UsersController(ElevenContext context)
+    {
+      _Context = context;
     }
 
     // Listar Usuarios
@@ -37,14 +40,17 @@ namespace ElevenNotesBackEnd.Controllers{
     {
       _Context.Users.Add(user);
       await _Context.SaveChangesAsync();
-      return CreatedAtAction("GetPerson",new {id=user.Id}, user);
+      return CreatedAtAction("GetPerson", new { id = user.Id }, user);
     }
 
     // Eliminar un usuario
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteUser(int id) {
+    public async Task<ActionResult> DeleteUser(int id)
+    {
       var user = await _Context.Users.FindAsync(id);
-      if(user==null){
+      System.Console.WriteLine(user);
+      if (user == null)
+      {
         return NotFound();
       }
       _Context.Users.Remove(user);
