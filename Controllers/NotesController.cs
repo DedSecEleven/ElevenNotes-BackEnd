@@ -3,10 +3,12 @@ using ElevenNotesBackEnd.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace ElevenNotesBackEnd.Controllers{
+namespace ElevenNotesBackEnd.Controllers
+{
   [Route("api/[controller]")]
   [ApiController]
-  public class NotesController:Controller{
+  public class NotesController : Controller
+  {
     private readonly ElevenContext _Context;
     public NotesController(ElevenContext context)
     {
