@@ -1,18 +1,13 @@
 using ElevenNotesBackEnd.Data;
-using ElevenNotesBackEnd.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
-namespace ElevenNotesBackEnd.Controllers
-{
-  [Route("api/[controller]")]
+namespace ElevenNotesBackEnd.Controllers{
+  [Route("api/[Controller]")]
   [ApiController]
-  public class UsersController : Controller
-  {
+  public class UsersController:Controller{
     private readonly ElevenContext _Context;
-    public UsersController(ElevenContext context)
-    {
-      _Context = context;
+    public UsersController(ElevenContext context){
+      _Context=context;
     }
 
     // Listar Usuarios
