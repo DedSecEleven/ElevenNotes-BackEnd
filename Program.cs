@@ -1,3 +1,8 @@
+// dotnet add package Microsoft.AspNetCore.Cors -> para agregar la función de los cors
+
+using ElevenNotesBackEnd.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,7 +13,27 @@ builder.Services.AddSwaggerGen();
 //Agregamos nuevos servicios Controller
 builder.Services.AddControllers();
 
+// Agregamos los cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAnyOrigin",
+        builder => builder.AllowAnyOrigin()
+       .AllowAnyHeader()
+       .AllowAnyMethod());
+});
+
+//Ruta de la base de datos 
+builder.Services.AddDbContext<ElevenContext>(Options =>
+    Options.UseMySql
+    (
+        builder.Configuration.GetConnectionString("ElevenContext"),
+        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")
+    )
+);
+
 var app = builder.Build();
+
+app.UseCors("AllowAnyOrigin");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -19,7 +44,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+/* var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
@@ -37,7 +62,7 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast")
-.WithOpenApi();
+.WithOpenApi(); */
 
 // Mapeamos todos los servicios necesarios
 app.MapControllers();

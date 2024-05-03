@@ -30,5 +30,26 @@ namespace ElevenNotesBackEnd.Controllers{
       }
       return user;
     }
+
+    // Crear un usuario
+    [HttpPost]
+    public async Task<ActionResult<User>> CreateUser(User user)
+    {
+      _Context.Users.Add(user);
+      await _Context.SaveChangesAsync();
+      return CreatedAtAction("GetPerson",new {id=user.Id}, user);
+    }
+
+    // Eliminar un usuario
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteUser(int id) {
+      var user = await _Context.Users.FindAsync(id);
+      if(user==null){
+        return NotFound();
+      }
+      _Context.Users.Remove(user);
+      await _Context.SaveChangesAsync();
+      return NoContent();
+    }
   }
 }

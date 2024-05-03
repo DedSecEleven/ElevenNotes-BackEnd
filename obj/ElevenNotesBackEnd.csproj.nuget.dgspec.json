@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maico\\Downloads\\ElevenNotes-BackEnd\\ElevenNotesBackEnd.csproj": {}
+    "C:\\Users\\maico\\Documents\\ElevenNotes-BackEnd\\ElevenNotesBackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maico\\Downloads\\ElevenNotes-BackEnd\\ElevenNotesBackEnd.csproj": {
+    "C:\\Users\\maico\\Documents\\ElevenNotes-BackEnd\\ElevenNotesBackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maico\\Downloads\\ElevenNotes-BackEnd\\ElevenNotesBackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\maico\\Documents\\ElevenNotes-BackEnd\\ElevenNotesBackEnd.csproj",
         "projectName": "ElevenNotesBackEnd",
-        "projectPath": "C:\\Users\\maico\\Downloads\\ElevenNotes-BackEnd\\ElevenNotesBackEnd.csproj",
+        "projectPath": "C:\\Users\\maico\\Documents\\ElevenNotes-BackEnd\\ElevenNotesBackEnd.csproj",
         "packagesPath": "C:\\Users\\maico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maico\\Downloads\\ElevenNotes-BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\maico\\Documents\\ElevenNotes-BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.3, )"
