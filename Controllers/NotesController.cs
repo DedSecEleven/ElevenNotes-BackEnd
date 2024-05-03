@@ -43,7 +43,7 @@ namespace ElevenNotesBackEnd.Controllers{
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteNote(int id)
     {
-      var note = await _Context.Users.FindAsync(id);
+      var note = await _Context.Notes.FindAsync(id);
       System.Console.WriteLine(note);
       if (note == null)
       {
