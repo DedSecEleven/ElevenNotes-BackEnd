@@ -1,5 +1,7 @@
 using ElevenNotesBackEnd.Data;
+using ElevenNotesBackEnd.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ElevenNotesBackEnd.Controllers{
   public class NotesController:Controller{
@@ -8,7 +10,6 @@ namespace ElevenNotesBackEnd.Controllers{
     {
       _Context = context;
     }
-<<<<<<< HEAD
 
     // Listar Notas
     [HttpGet]
@@ -27,7 +28,5 @@ namespace ElevenNotesBackEnd.Controllers{
       }
       return note;
     }
-=======
->>>>>>> d480b6be027f4d6ca84d0a09ad3ae7fdcf781c92
   }
 }
