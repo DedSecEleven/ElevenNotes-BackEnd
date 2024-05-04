@@ -61,7 +61,7 @@ namespace ElevenNotesBackEnd.Controllers
     [HttpPut("{id}")]
     public async Task<ActionResult<User>> update(User usercito, int id){
       _Context.Users.Update(usercito);
-      _Context.SaveChangesAsync();
+      await _Context.SaveChangesAsync();
       return usercito;
     }
   }
