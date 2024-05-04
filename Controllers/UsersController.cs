@@ -48,7 +48,6 @@ namespace ElevenNotesBackEnd.Controllers
     public async Task<ActionResult> DeleteUser(int id)
     {
       var user = await _Context.Users.FindAsync(id);
-      System.Console.WriteLine(user);
       if (user == null)
       {
         return NotFound();
@@ -56,6 +55,14 @@ namespace ElevenNotesBackEnd.Controllers
       _Context.Users.Remove(user);
       await _Context.SaveChangesAsync();
       return NoContent();
+    }
+
+    //Actualizar 
+    [HttpPut("{id}")]
+    public async Task<ActionResult<User>> update(User usercito, int id){
+      _Context.Users.Update(usercito);
+      _Context.SaveChangesAsync();
+      return usercito;
     }
   }
 }

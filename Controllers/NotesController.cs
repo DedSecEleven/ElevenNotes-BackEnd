@@ -53,5 +53,13 @@ namespace ElevenNotesBackEnd.Controllers{
       await _Context.SaveChangesAsync();
       return NoContent();
     }
+
+    //Actualizar 
+    [HttpPut("{id}")]
+    public async Task<ActionResult<Note>> update(Note notica, int id){
+      _Context.Notes.Update(notica);
+      _Context.SaveChangesAsync();
+      return notica;
+    }
   }
 }
