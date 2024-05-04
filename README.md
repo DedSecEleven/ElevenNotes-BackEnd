@@ -1,1 +1,2 @@
 # ElevenNotes-BackEnd
+En este repositorio se implementan todos los archivos, carpetas, bases de datos y métodos necesarios para poder trabajar con el proyecto Eleven Notes en donde podemos tomar notas y a su vez se puede categorizar estas mismas que se creen en su propio espacio de trabajo de una forma minimalista y limpia donde se podra encontrar también de manera organizada la hora a la cual fue creada y las notas mas recientes.
