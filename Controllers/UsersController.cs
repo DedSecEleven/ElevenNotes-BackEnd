@@ -40,7 +40,7 @@ namespace ElevenNotesBackEnd.Controllers
     {
       _Context.Users.Add(user);
       await _Context.SaveChangesAsync();
-      return CreatedAtAction("GetPerson", new { id = user.Id }, user);
+      return CreatedAtAction("GetUser", new { id = user.Id }, user);
     }
 
     // Eliminar un usuario
