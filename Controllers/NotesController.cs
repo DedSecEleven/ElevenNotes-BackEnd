@@ -44,7 +44,6 @@ namespace ElevenNotesBackEnd.Controllers{
     public async Task<ActionResult> DeleteNote(int id)
     {
       var note = await _Context.Notes.FindAsync(id);
-      System.Console.WriteLine(note);
       if (note == null)
       {
         return NotFound();
@@ -56,8 +55,10 @@ namespace ElevenNotesBackEnd.Controllers{
 
     //Actualizar 
     [HttpPut("{id}")]
-    public async Task<ActionResult<Note>> update(Note notica, int id){
-      _Context.Notes.Update(notica);
+    public async Task<ActionResult<Note>> UpdateNote(Note notica, int id){
+      // _Context.Notes.Update(notica);
+
+      _Context.Entry(notica).State = EntityState.Modified;
       await _Context.SaveChangesAsync();
       return notica;
     }
