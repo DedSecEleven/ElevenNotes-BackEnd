@@ -5,5 +5,6 @@ namespace ElevenNotesBackEnd.Models{
     public string Content{get; set;}
     public int UserId { get; set; }
     public DateTime DateModified{get; set;}
+    public bool Hide { get; set; }
   }
 }
